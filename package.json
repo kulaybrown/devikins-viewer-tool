@@ -1,0 +1,58 @@
+{
+    "dependencies": {
+        "jquery": "^3.5.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.11.1",
+        "@babel/preset-env": "^7.11.0",
+        "@commitlint/cli": "^11.0.0",
+        "@commitlint/config-conventional": "^11.0.0",
+        "babel-jest": "^26.3.0",
+        "babel-loader": "^8.1.0",
+        "css-loader": "^4.2.1",
+        "cssnano": "^4.1.10",
+        "eslint": "^7.10.0",
+        "eslint-config-prettier": "^6.12.0",
+        "eslint-plugin-compat": "^3.8.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-jsdoc": "^30.6.3",
+        "eslint-plugin-prettier": "^3.1.4",
+        "eslint-plugin-promise": "^4.2.1",
+        "glob": "^7.1.6",
+        "husky": "^4.2.5",
+        "jest": "^26.4.0",
+        "mini-css-extract-plugin": "^0.9.0",
+        "postcss-loader": "^3.0.0",
+        "postcss-preset-env": "^6.7.0",
+        "prettier": "^2.0.5",
+        "sass": "^1.26.10",
+        "sass-loader": "^9.0.3",
+        "standard-version": "^9.0.0",
+        "stylelint": "^13.7.2",
+        "stylelint-a11y": "^1.2.3",
+        "stylelint-config-prettier": "^8.0.2",
+        "stylelint-config-recommended": "^3.0.0",
+        "stylelint-order": "^4.1.0",
+        "stylelint-prettier": "^1.1.2",
+        "stylelint-scss": "^3.18.0",
+        "svg-sprite-loader": "^5.0.0",
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.12"
+    },
+    "engines": {
+        "node": ">=12.0.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "build": "webpack --mode=production",
+        "commit": "git-cz",
+        "lint": "npm run lint:scripts && npm run lint:styles",
+        "lint:scripts": "eslint .",
+        "lint:styles": "stylelint \"**/*.scss\"",
+        "release": "standard-version",
+        "test": "jest --passWithNoTests",
+        "watch": "webpack --mode=development --watch"
+    },
+    "version": "0.1.0"
+}
