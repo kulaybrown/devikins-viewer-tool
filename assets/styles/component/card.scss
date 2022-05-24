@@ -1,0 +1,52 @@
+[devi-id] {
+  max-width: 180px;
+  width: 100%;
+  border-radius: 5px;
+  height: 210px;
+
+  >div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 300px;
+    background-position: -65px -70px;
+  }
+}
+
+.no-parents {
+  max-width: 190px;
+  width: 100%;
+  border-radius: 5px;
+  height: 210px;
+}
+
+#child {
+  margin: auto;
+}
+
+[devi-rarity] {
+  border: 6px solid black;
+}
+
+[devi-rarity='common'] {
+  border-color: #6C4807;
+}
+
+[devi-rarity='uncommon'] {
+  border-color: silver;
+}
+
+[devi-rarity='rare'] {
+  border-color: gold;
+}
+
+[devi-rarity='mythic'] {
+  border-color: maroon;
+}
+
+[devi-rarity='eldritch'] {
+  border-color: purple;
+}

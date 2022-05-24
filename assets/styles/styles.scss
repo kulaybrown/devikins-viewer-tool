@@ -1,3 +1,7 @@
 h1 {
     font-size: 34px;
 }
+
+@import "./component/font.scss";
+@import "./component/parentviewer.scss";
+@import "./component/card.scss";

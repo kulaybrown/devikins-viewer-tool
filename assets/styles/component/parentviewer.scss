@@ -1,0 +1,390 @@
+/* Color palette used -
+http://www.color-hex.com/color-palette/63826 */
+
+
+
+// MIXINS
+
+@import "./mixins.scss";
+
+// PAGE BASE
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  @include flexBox();
+  background-color: #f0f0e8;
+}
+
+body {
+  background-color: #f0f0e8;
+  font-family: 'Roboto', cursive;
+  font-size: 14px;
+  width: 60%;
+  text-align: center;
+  margin: auto;
+}
+
+h1 {
+  color: #41669d;
+  font-family: 'Dancing Script', cursive;
+  font-size: 60px;
+  margin: 20px 0px 30px;
+  text-align: center;
+
+  span {
+    display: block;
+    font-size: 25px;
+    color: #aab4af;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h1 span {
+    font-size: 20px;
+  }
+}
+
+// FAMILY TREE
+// Try keeping the same content's size for all cards or the design might break
+// Have fun with the variables :)
+
+$linkBorderWidth: 2px;
+$link: #{$linkBorderWidth} solid #c6d1cb;
+$marginBelowGeneration: 20px;
+$cardMargin: 10px;
+$borderRadius: 3px;
+$extraBorderSize: #{$borderRadius}; // Needed for border-radius
+
+#family-tree {
+  // Base styles
+
+  *:before,
+  *:after {
+    content: "";
+    position: absolute;
+  }
+
+  [class^="card"],
+  .pair,
+  .generation {
+    position: relative;
+  }
+
+  .generation {
+    @include flexBox();
+    margin-bottom: $marginBelowGeneration;
+
+    .pair {
+      @include flex();
+      @include flexBox();
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  [class^="card"] {
+    @include flex();
+    padding: 10px;
+    border-radius: 5px;
+    color: #212c3c;
+  }
+
+  .card-m {
+    background-color: #b8c9df;
+  }
+
+  // Male
+  .card-f {
+    background-color: #dfb8d4;
+  }
+
+  // Female
+
+  // Links
+
+  .pair {
+    &:after {
+      width: calc(50% - #{$linkBorderWidth});
+      border: $link;
+      border-top: 0;
+      border-bottom-left-radius: $borderRadius;
+      border-bottom-right-radius: $borderRadius;
+      right: 0;
+      left: 0;
+      margin: auto;
+      top: calc(100% + #{$marginBelowGeneration} / 2 - #{$extraBorderSize});
+      height: $extraBorderSize;
+    }
+  }
+
+  [class^="card"] {
+
+    &:before,
+    &:after {
+      right: 0;
+      left: 0;
+      width: 0;
+      margin: auto;
+      border-left: $link;
+      height: calc(#{$cardMargin} + #{$marginBelowGeneration} / 2);
+    }
+
+    &:before {
+      bottom: 100%;
+    }
+
+    &:after {
+      top: 100%;
+    }
+  }
+
+  #grand-parents [class^="card"]:before,
+  #child [class^="card"]:after {
+    border: 0;
+    opacity: 0;
+  }
+}
+
+// Responsive
+
+@media screen and (max-width: 700px) {
+  #family-tree #grand-parents {
+
+    &:before,
+    &:after {
+      border-top: $link;
+      height: calc(50% + #{$marginBelowGeneration});
+      width: $cardMargin;
+      top: 50%;
+    }
+
+    &:before {
+      opacity: 1;
+      border-left: $link;
+      right: calc(100% + #{$extraBorderSize});
+      border-top-left-radius: $borderRadius;
+    }
+
+    &:after {
+      border-right: $link;
+      left: calc(100% + #{$extraBorderSize});
+      border-top-right-radius: $borderRadius;
+    }
+
+    .pair {
+      @include flexDirection();
+
+      &:after {
+        border: 0;
+      }
+    }
+
+    [class^="card"] {
+      &:before {
+        border-bottom: $link  !important;
+        width: $cardMargin;
+        height: 0;
+      }
+
+      &:after {
+        width: calc(#{$extraBorderSize} + #{$cardMargin});
+        height: calc(50% + #{$cardMargin} + #{$extraBorderSize} * 2);
+      }
+
+      &:first-child {
+        &:before {
+          top: 50%;
+          bottom: auto;
+        }
+
+        &:after {
+          border-top: $link;
+          top: 50%;
+          bottom: auto;
+        }
+      }
+
+      &:last-child {
+        &:before {
+          bottom: 50%;
+          top: auto;
+        }
+
+        &:last-child:after {
+          border-bottom: $link;
+          bottom: 50%;
+          top: auto;
+        }
+      }
+    }
+
+    .pair:first-child [class^="card"] {
+      &:before {
+        left: -#{$cardMargin};
+        right: auto;
+      }
+
+      &:after {
+        left: auto;
+        right: 100%;
+      }
+
+      &:first-child:after {
+        border-top-left-radius: $borderRadius;
+      }
+
+      &:last-child:after {
+        border-bottom-left-radius: $borderRadius;
+      }
+    }
+
+    .pair:last-child [class^="card"] {
+      &:before {
+        right: -#{$cardMargin};
+        left: auto;
+      }
+
+      &:after {
+        left: 100%;
+        right: auto;
+        border-left: 0;
+        border-right: $link;
+      }
+
+      &:first-child:after {
+        border-top-right-radius: $borderRadius;
+      }
+
+      &:last-child:after {
+        border-bottom-right-radius: $borderRadius;
+      }
+    }
+  }
+
+  #family-tree #parents [class^="card"] {
+    &:before {
+      border-bottom: $link;
+      width: calc(#{$cardMargin} * 2 + #{$extraBorderSize});
+      bottom: 50%;
+      height: calc(50% + #{$cardMargin});
+    }
+
+    &:first-child:before {
+      right: 100%;
+      left: auto;
+      border-bottom-left-radius: $borderRadius;
+    }
+
+    &:last-child:before {
+      border-left: 0;
+      border-right: $link;
+      left: 100%;
+      border-bottom-right-radius: $borderRadius;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #family-tree #grand-parents {
+    @include flexDirection();
+
+    &:before {
+      top: 25%;
+      height: calc(75% + #{$marginBelowGeneration});
+    }
+
+    &:after {
+      top: 75%;
+      height: calc(25% + #{$marginBelowGeneration});
+    }
+  }
+
+  #family-tree #parents {
+    &:after {
+      border-left: $link;
+      border-top: $link;
+      border-top-left-radius: $borderRadius;
+      height: calc(50% + #{$marginBelowGeneration});
+      width: $cardMargin;
+      right: calc(100% + #{$extraBorderSize});
+      top: 50%;
+    }
+
+    .pair {
+      @include flexDirection();
+
+      &:after {
+        border: 0;
+        height: 0;
+        opacity: 0;
+      }
+    }
+
+    [class^="card"] {
+      &:after {
+        right: 100%;
+        left: auto;
+        width: calc(#{$extraBorderSize} + #{$cardMargin});
+      }
+    }
+
+    [class^="card"]:first-child {
+      &:before {
+        height: 90%;
+        bottom: 60%;
+      }
+
+      &:after {
+        border-top: $link;
+        height: calc(40% + #{$cardMargin});
+        top: 60%;
+        border-top-left-radius: $borderRadius;
+      }
+    }
+
+    [class^="card"]:last-child {
+      &:before {
+        height: calc(150% + #{$cardMargin}* 3);
+      }
+
+      &:after {
+        border-bottom: $link;
+        height: calc(50% + #{$cardMargin});
+        bottom: 50%;
+        top: auto;
+        border-bottom-left-radius: $borderRadius;
+      }
+    }
+  }
+
+  #family-tree #child {
+    &:before {
+      border-left: $link;
+      border-bottom: $link;
+      border-bottom-left-radius: $borderRadius;
+      height: 100%;
+      bottom: 50%;
+      right: calc(100% - #{$cardMargin});
+      left: auto;
+      width: calc(#{$extraBorderSize} + #{$cardMargin} * 2);
+    }
+
+    [class^="card"]:before {
+      border: 0;
+      height: 0;
+      opacity: 0;
+    }
+  }
+}
