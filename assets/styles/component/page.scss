@@ -1,0 +1,54 @@
+// PAGE BASE
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    @include flexBox();
+    background: $nero;
+}
+
+body {
+
+    font-family: 'Roboto', cursive;
+    font-size: 14px;
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+h1 {
+    color: $eldritch;
+    font-size: 50px;
+    margin: 20px 0px 30px;
+    text-align: center;
+
+    span {
+        display: block;
+        font-size: 25px;
+        color: #aab4af;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    h1 span {
+        font-size: 20px;
+    }
+}
+
+#select-action {
+    margin-bottom: 10px;
+}

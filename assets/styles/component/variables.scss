@@ -1,0 +1,46 @@
+$common: #875b27;
+$uncommon: #bdbdbd;
+$rare: #ffe600;
+$mythic: #d80000;
+$eldritch: #aa33b5;
+
+$unique: #fff;
+$bonded: #00007C;
+
+$nero: #1c1c1c;
+
+$boxShadowUncommon: 0px 0px 10px 0px $common;
+$boxShadowCommon: 0px 0px 10px 0px $uncommon;
+$boxShadowRare: 0px 0px 10px 0px $rare;
+$boxShadowMythic: 0px 0px 10px 0px $mythic;
+$boxShadowEldritch: 0px 0px 10px 0px $eldritch;
+
+.gradient-common {
+    background: rgb(158, 93, 28);
+    background: linear-gradient(145deg, rgba(158, 93, 28, 1) 0%, rgba(110, 58, 6, 1) 100%);
+    box-shadow: $boxShadowUncommon;
+}
+
+.gradient-uncommon {
+    background: rgb(164, 164, 166);
+    background: linear-gradient(145deg, rgba(164, 164, 166, 1) 0%, rgba(115, 115, 115, 1) 100%);
+    box-shadow: $boxShadowCommon;
+}
+
+.gradient-rare {
+    background: rgb(237, 194, 17);
+    background: linear-gradient(145deg, rgba(237, 194, 17, 1) 0%, rgba(218, 165, 33, 1) 100%);
+    box-shadow: $boxShadowRare;
+}
+
+.gradient-mythic {
+    background: rgb(160, 14, 26);
+    background: linear-gradient(145deg, rgba(160, 14, 26, 1) 0%, rgba(130, 0, 0, 1) 100%);
+    box-shadow: $boxShadowMythic;
+}
+
+.gradient-eldritch {
+    background: rgb(106, 62, 163);
+    background: linear-gradient(145deg, rgba(106, 62, 163, 1) 0%, rgba(77, 32, 130, 1) 100%);
+    box-shadow: $boxShadowEldritch;
+}

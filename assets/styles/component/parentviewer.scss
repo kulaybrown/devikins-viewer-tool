@@ -7,52 +7,7 @@ http://www.color-hex.com/color-palette/63826 */
 
 @import "./mixins.scss";
 
-// PAGE BASE
 
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html {
-  height: 100%;
-  @include flexBox();
-  background-color: #f0f0e8;
-}
-
-body {
-  background-color: #f0f0e8;
-  font-family: 'Roboto', cursive;
-  font-size: 14px;
-  width: 60%;
-  text-align: center;
-  margin: auto;
-}
-
-h1 {
-  color: #41669d;
-  font-family: 'Dancing Script', cursive;
-  font-size: 60px;
-  margin: 20px 0px 30px;
-  text-align: center;
-
-  span {
-    display: block;
-    font-size: 25px;
-    color: #aab4af;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  h1 {
-    font-size: 40px;
-  }
-
-  h1 span {
-    font-size: 20px;
-  }
-}
 
 // FAMILY TREE
 // Try keeping the same content's size for all cards or the design might break
@@ -97,20 +52,8 @@ $extraBorderSize: #{$borderRadius}; // Needed for border-radius
   [class^="card"] {
     @include flex();
     padding: 10px;
-    border-radius: 5px;
     color: #212c3c;
   }
-
-  .card-m {
-    background-color: #b8c9df;
-  }
-
-  // Male
-  .card-f {
-    background-color: #dfb8d4;
-  }
-
-  // Female
 
   // Links
 
@@ -185,6 +128,7 @@ $extraBorderSize: #{$borderRadius}; // Needed for border-radius
 
     .pair {
       @include flexDirection();
+      align-items: center;
 
       &:after {
         border: 0;

@@ -5,17 +5,26 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Devikin test</title>
+  <title>Devikin Viewer</title>
   <link rel="stylesheet" href="./assets/styles/main.css">
 </head>
-<h1>Devikin Parent Viewer</h1>
+<h1>Devikin Viewer</h1>
 
 <body>
+  <select id="select-action">
+    <option value="parents">Parents</option>
+    <option value="roster" disabled>Roster</option>
+    <option value="store" disabled>Store</option>
+  </select>
   <div class="find-parent">
-    <input type="text">
-    <button role="button">Find</button>
+    <div class="find-parent-action">
+      <input type="number" placeholder="e.g. 123123">
+      <button role="button">Find</button>
+    </div>
     <div class="parent-container" id="family-tree"></div>
   </div>
+
+
   <script src="./assets/scripts/main.bundle.js"></script>
 </body>
 

@@ -1,8 +1,9 @@
 [devi-id] {
-  max-width: 180px;
+  max-width: 130px;
   width: 100%;
-  border-radius: 5px;
-  height: 210px;
+  height: 170px;
+  padding: 5px;
+  border-radius: 20px;
 
   >div {
     display: flex;
@@ -11,42 +12,245 @@
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
-    background-size: 300px;
-    background-position: -65px -70px;
+    background-size: 180px;
+    background-position: -26px -40px;
+    position: relative;
+    border-radius: 15px;
   }
-}
-
-.no-parents {
-  max-width: 190px;
-  width: 100%;
-  border-radius: 5px;
-  height: 210px;
 }
 
 #child {
   margin: auto;
 }
 
-[devi-rarity] {
-  border: 6px solid black;
-}
-
 [devi-rarity='common'] {
-  border-color: #6C4807;
+  @extend .gradient-common;
+
+  >div {
+    border-color: $common;
+  }
+
+  .devi-oa {
+    color: $common;
+  }
 }
 
 [devi-rarity='uncommon'] {
-  border-color: silver;
+  @extend .gradient-uncommon;
+
+  >div {
+    border-color: $uncommon;
+  }
+
+  .devi-oa {
+    color: $uncommon;
+  }
 }
 
 [devi-rarity='rare'] {
-  border-color: gold;
+  @extend .gradient-rare;
+
+  >div {
+    border-color: $rare;
+  }
+
+  .devi-oa {
+    color: $rare;
+  }
 }
 
 [devi-rarity='mythic'] {
-  border-color: maroon;
+  @extend .gradient-mythic;
+
+  >div {
+    border-color: $mythic;
+  }
+
+  .devi-oa {
+    color: $mythic;
+  }
 }
 
 [devi-rarity='eldritch'] {
-  border-color: purple;
+  @extend .gradient-eldritch;
+
+  >div {
+    border-color: $eldritch;
+  }
+
+  .devi-oa {
+    color: $eldritch;
+  }
+}
+
+.gene-cont {
+  left: -40px;
+  z-index: 1;
+
+  .gene {
+    background-size: cover !important;
+    background-position: center !important;
+    background-size: 80% !important;
+    background-repeat: no-repeat !important;
+
+    &-mouth {
+      background: url(/assets/images/mouth-gene.png), #000;
+
+    }
+
+    &-eye {
+      background: url(/assets/images/eye-gene.png), #000;
+
+    }
+
+    &-ear {
+      background: url(/assets/images/ear-gene.png), #000;
+
+    }
+
+    &-hair {
+      background: url(/assets/images/hair-gene.png), #000;
+
+    }
+
+    &-horn {
+      background: url(/assets/images/horn-gene.png), #000;
+
+    }
+  }
+
+  [data-gene='dominant'] {
+    border-color: $common;
+  }
+
+  [data-gene='co-dominant'] {
+    border-color: $mythic;
+  }
+
+  [data-gene='recessive'] {
+    border-color: $rare;
+  }
+
+  [data-gene='mutated'] {
+    border-color: $mythic;
+  }
+
+  [data-gene='unique'] {
+    border-color: $unique;
+  }
+
+  [data-gene='bonded'] {
+    border-color: $bonded;
+  }
+}
+
+.aff-cont {
+  right: -40px;
+  z-index: 1;
+
+  [data-aff="common"] {
+    border-color: $common;
+  }
+
+  [data-aff="uncommon"] {
+    border-color: $uncommon;
+  }
+
+  [data-aff="rare"] {
+    border-color: $rare;
+  }
+
+  [data-aff="mythic"] {
+    border-color: $mythic;
+  }
+
+  [data-aff="eldritch"] {
+    border-color: $eldritch;
+
+    >span {
+      color: #fff;
+      background: $eldritch;
+    }
+  }
+
+  >div {
+    background-size: cover !important;
+    background-position: center !important;
+    background-size: 80% !important;
+    background-repeat: no-repeat !important;
+    position: relative;
+
+    >span {
+      position: absolute;
+      bottom: -5px;
+      right: -5px;
+      font-weight: 700;
+      color: #fff;
+      font-size: 14px;
+      background: black;
+      padding: 2px;
+      line-height: 1;
+    }
+  }
+
+  .aff {
+
+
+    &-vit {
+      background: url(/assets/images/vit-aff.png), #000;
+    }
+
+    &-pow {
+      background: url(/assets/images/pow-aff.png), #000;
+    }
+
+    &-for {
+      background: url(/assets/images/for-aff.png), #000;
+    }
+
+    &-agi {
+      background: url(/assets/images/agi-aff.png), #000;
+    }
+
+    &-san {
+      background: url(/assets/images/san-aff.png), #000;
+    }
+  }
+}
+
+.gene-cont,
+.aff-cont {
+  position: absolute;
+
+
+  >div {
+    height: 30px;
+    width: 30px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 3px;
+  }
+}
+
+.devi-id {
+  background: black;
+  color: white;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.devi-oa {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 20px;
+  font-weight: 700;
+  background: black;
+  border-radius: 12px;
+  padding: 5px;
+  line-height: .8;
 }

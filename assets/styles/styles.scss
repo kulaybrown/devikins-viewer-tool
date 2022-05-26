@@ -2,6 +2,11 @@ h1 {
     font-size: 34px;
 }
 
+@import "./component/variables.scss";
+@import "./component/mixins.scss";
+@import "./component/page.scss";
 @import "./component/font.scss";
 @import "./component/parentviewer.scss";
 @import "./component/card.scss";
+@import "./component/parents.scss";
+@import "./component/select.scss";
