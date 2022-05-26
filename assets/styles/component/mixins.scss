@@ -1,0 +1,43 @@
+@mixin flexBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-around;
+}
+
+@mixin flex($flexGrow: "1", $flexShrink: "1", $flexBasis: "0%") {
+  -webkit-box-flex: #{$flexGrow};
+  -ms-flex-positive: #{$flexGrow};
+  flex-grow: #{$flexGrow};
+
+  -ms-flex-negative: #{$flexShrink};
+  flex-shrink: #{$flexShrink};
+
+  -ms-flex-preferred-size: #{$flexBasis};
+  flex-basis: #{$flexBasis};
+}
+
+@mixin flexDirection($flexDirection: "column") {
+  @if $flexDirection =="row" {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+  }
+
+  @else if $flexDirection =="row-reverse" {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+  }
+
+  @else if $flexDirection =="column" {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+  }
+
+  @else {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+  }
+
+  -ms-flex-direction: #{$flexDirection};
+  flex-direction: #{$flexDirection};
+}
