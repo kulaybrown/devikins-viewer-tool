@@ -5,37 +5,48 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:image" content="./og-img-dvk.jpg" />
+  <meta property="og:image" content="og-img-dvk.jpg" />
   <title>Devikins Viewer</title>
   <link rel="stylesheet" href="./assets/styles/main.css">
 </head>
 <h1>Devikins Viewer</h1>
 
 <body>
-  <select id="select-action">
-    <option value="parents">Parents</option>
-    <option value="roster" disabled>Roster</option>
-    <option value="store" disabled>Store</option>
-  </select>
-  <div class="find-parent">
-    <div class="find-parent-action">
-      <input type="number" placeholder="e.g. 123123">
-      <button role="button">Find</button>
+  <div class="container">
+    <select id="select-action">
+      <option value="parents">Find Deviparents</option>
+      <option value="roster" disabled>Roster</option>
+      <option value="store" disabled>Store</option>
+    </select>
+    <div class="find-parent">
+      <div class="find-parent-action">
+        <input type="number" placeholder="Devikid ID">
+        <button role="button">Search</button>
+      </div>
+      <div class="parent-container" id="family-tree"></div>
     </div>
-    <div class="parent-container" id="family-tree"></div>
-  </div>
-
-  <div class="send-love">
-    <p>Send ❤️ for me to buy a 🍺 Thank you</p>
-
-    <div>
-      <input id="forbeer" value="THUTTBQ8hHPuZMrdMx8GnGrKDJTfkT3o9J" readonly />
-      <img src="./assets/images/clipboard-solid-purple.svg" alt="">
+    <div class="send-love">
+      <p>Send ❤️ for me to buy a 🍺 Thank you</p>
+      <div>
+        <input id="forbeer" value="THUTTBQ8hHPuZMrdMx8GnGrKDJTfkT3o9J" readonly />
+        <img src="./assets/images/clipboard-solid-purple.svg" alt="">
+      </div>
+      <span>Devikins Viewer by Kulaybrown</span>
     </div>
 
-    <span>Devikins Viewer by Kulaybrown</span>
   </div>
-
+  <div class="guild">
+    <p>Looking for a <b>Guild</b>? 😟 <br>
+      💪🤝🤩🥇</p>
+    <div class="guild-item">
+      <img src="./assets/images/gera-1.png" alt="GERA Guild 1">
+      <p>GERA</p>
+    </div>
+    <div class="guild-item">
+      <img src="./assets/images/gera-2.png" alt="GERA Guild 2">
+      <p>GERA II</p>
+    </div>
+  </div>
   <script src="./assets/scripts/main.bundle.js"></script>
 </body>
 
