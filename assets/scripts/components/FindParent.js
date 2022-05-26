@@ -221,7 +221,7 @@ addListeners() {
 
 
         } else {
-          parentContainer.append('<p>No Parent</p>');
+          parentContainer.append('<p style="color: white;">No Parents</p>');
         }
 
 
