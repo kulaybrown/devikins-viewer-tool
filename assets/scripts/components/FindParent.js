@@ -41,7 +41,7 @@ addListeners() {
       data: {
       },
       success: function (result) {
-        console.log(result)
+        // console.log(result)
         const parentContainer = $(".parent-container");
         const p1 = result.ParentHashList[0];
         const p2 = result.ParentHashList[1];
@@ -94,7 +94,7 @@ addListeners() {
 
                 // const grandparents = '<div class="generation" id="grand-parents"><div class="pair"></div></div>'
                 // parentContainer.append(grandparents)
-                console.log(deviChildID)
+                // console.log(deviChildID)
                 // parentContainer2.find('.child-cont').append(`<div class='parent-item' devi-id='${p1}'>${p1}</div>`);
                 
                 const g1 = resultx.ParentHashList[0];
@@ -263,10 +263,10 @@ addListeners() {
     }
     
     function handleFamilyData() {
-      console.log(deviFamily.length)
+      // console.log(deviFamily.length)
       // console.log("no 3")
       for (let index = 0; index < deviFamily.length; index++) {
-        console.log(index)
+        // console.log(index)
         $.ajax({
           url: `https://inventory.api.devikins.com/asset/${deviFamily[index]}`,
           type: "GET",
