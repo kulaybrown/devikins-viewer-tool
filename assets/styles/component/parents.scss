@@ -1,32 +1,6 @@
 .find-parent {
   margin-bottom: 50px;
 
-  .find-parent-action {
-    max-width: 350px;
-    width: 100%;
-    margin: auto;
-    margin-bottom: 50px;
-
-    input {
-      width: 100%;
-      font-size: 20px;
-      padding: 5px 10px;
-      border: 0px;
-      color: white;
-      background: rgb(0 0 0 / 30%);
-      margin-bottom: 10px;
-    }
-
-    button {
-      width: 100%;
-      font-size: 20px;
-      padding: 5px 10px;
-      background: $eldritch;
-      border: 0px;
-      color: white;
-    }
-  }
-
   .no-parents {
     max-width: 130px;
     width: 100%;

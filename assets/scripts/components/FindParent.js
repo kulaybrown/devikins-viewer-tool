@@ -1,4 +1,5 @@
 import $ from "jquery";
+import {handleImgIndexPath, handleRarity, handleGenes, handleAffinity} from "./helpers";
 
 class FindParent {
   constructor(element) {
@@ -9,9 +10,9 @@ class FindParent {
     // this.$optionItem = this.$optionlist.find(".select-dropdown-option-item");
     this.addListeners();
     
-}
+  }
 
-addListeners() {
+  addListeners() {
     this.$selectButton.on("click", this.handleClickFindParent.bind(this));
     this.$selectInput.on("keypress", function(e) {
       if (e.key === "Enter") {
@@ -51,25 +52,6 @@ addListeners() {
           deviFamily.push(p1, p2)
           handleFamilyData();
         }
-
-        
-        // for (let index = 0; index < result.ParentHashList.length; index++) {
-        //   console.log(result.ParentHashList[index])
-        //   $.ajax({
-        //     url: `https://inventory.api.devikins.com/asset/${result.ParentHashList[index]}`,
-        //     type: "GET",
-        //     dataType: "json",
-        //     data: {
-        //     },
-        //     success: function (resultx) {
-      
-        //       console.log(resultx)
-        //     },
-        //     error: function () {
-        //       console.log("error");
-        //     }
-        //   });
-        // }
 
 
         $(parentContainer).empty()
@@ -298,11 +280,11 @@ addListeners() {
               if(id === JSON.stringify(resultxx.SequenceCounter)) {
                 // console.log(resultxx.OverallAffinity)
                 $(selectdeviId[index2]).attr('devi-rarity', handleRarity(resultxx.OverallAffinity));
-                $(geneMouth[index2]).attr("data-gene", handleGenes(resultxx.Mouth.Tag))
-                $(geneEye[index2]).attr("data-gene", handleGenes(resultxx.Eyes.Tag))
-                $(geneEar[index2]).attr("data-gene", handleGenes(resultxx.Ears.Tag))
-                $(geneHair[index2]).attr("data-gene", handleGenes(resultxx.Hair.Tag))
-                $(geneHorn[index2]).attr("data-gene", handleGenes(resultxx.Horns.Tag))
+                $(geneMouth[index2]).attr("data-gene", handleGenes(resultxx.Eyes ? resultxx.Mouth.Tag : "bonded"))
+                $(geneEye[index2]).attr("data-gene", handleGenes(resultxx.Eyes ? resultxx.Eyes.Tag : "bonded"))
+                $(geneEar[index2]).attr("data-gene", handleGenes(resultxx.Eyes ? resultxx.Ears.Tag : "bonded"))
+                $(geneHair[index2]).attr("data-gene", handleGenes(resultxx.Eyes ? resultxx.Hair.Tag : "bonded"))
+                $(geneHorn[index2]).attr("data-gene", handleGenes(resultxx.Eyes ? resultxx.Horns.Tag : "bonded"))
 
                 $(affVit[index2]).attr("data-aff", handleAffinity(resultxx.VitAffinity))
                 $(affPow[index2]).attr("data-aff", handleAffinity(resultxx.PowAffinity))
@@ -337,93 +319,8 @@ addListeners() {
       }
     }
     
-    function handleImgIndexPath(id) {
-      let x = 0;
-      if(id < 99999) {
-        x = 0;
-      } 
-      else if(id < 199999) {
-        x = 1;
-      }
-      else if(id < 299999) {
-        x = 2;
-      }
-      else if(id < 399999) {
-        x = 3;
-      }
-      else if(id < 499999) {
-        x = 4;
-      }
-      else if(id < 599999) {
-        x = 5;
-      }
-      else if(id < 699999) {
-        x = 6;
-      }
-      else if(id < 799999) {
-        x = 7;
-      }
-      else if(id < 899999) {
-        x = 8;
-      }
-      else if(id < 999999) {
-        x = 9;
-      }
-      else if(id < 1999999) {
-        x = 10;
-      }
-      return x;
-    }
 
-    function handleRarity(oa) {
-      let x = "common";
-      if (oa < 30) {
-        x = "common";
-      } else if (oa < 35) {
-        x = "uncommon";
-      } else if (oa < 41) {
-        x = "rare";
-      } else if (oa < 50) {
-        x = "mythic";
-      } else {
-        x = "eldritch";
-      }
-      return x;
-    }
-
-    function handleGenes(gene) {
-      let x = "dominant";
-      if(gene === 0) {
-        x = "dominant";
-      } else if(gene === 1) {
-        x = "co-dominant";
-      } else if(gene === 2) {
-        x = "recessive";
-      } else if(gene === 3) {
-        x = "mutated";
-      } else if(gene === 4) {
-        x = "unique";
-      } else {
-        x = "bonded";
-      }
-      return x;
-    }
-
-    function handleAffinity(aff) {
-      let x = "common";
-      if(aff < 4) {
-        x = "common";
-      } else if(aff < 6) {
-        x = "uncommon";
-      } else if(aff < 8) {
-        x = "rare";
-      } else if(aff < 10) {
-        x = "mythic";
-      } else {
-        x = "eldritch";
-      }
-      return x;
-    }
+    
 
     function handleGranParentsHide() {
       const parentContainer = $(".parent-container");

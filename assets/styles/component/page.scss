@@ -1,95 +1,129 @@
 // PAGE BASE
 
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    height: 100%;
-    @include flexBox();
-    background: $nero;
+  height: 100%;
+  @include flexBox();
+  background: $nero;
 }
 
 body {
 
-    font-family: 'Roboto', cursive;
-    font-size: 14px;
-    max-width: 1200px;
-    width: 100%;
-    text-align: center;
-    margin: auto;
+  font-family: 'Roboto', cursive;
+  font-size: 14px;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  margin: auto;
 }
 
 .container {
-    padding: 0 15px;
+  padding: 0 15px;
+}
+
+.selection {
+  display: none;
+
+  &--selected {
+    display: block;
+  }
 }
 
 h1 {
-    color: $eldritch;
-    font-size: 50px;
-    margin: 20px 0px 30px;
-    text-align: center;
+  color: $eldritch;
+  font-size: 50px;
+  margin: 20px 0px 30px;
+  text-align: center;
 
-    span {
-        display: block;
-        font-size: 25px;
-        color: #aab4af;
-    }
+  span {
+    display: block;
+    font-size: 25px;
+    color: #aab4af;
+  }
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 400px) {
-    h1 {
-        font-size: 40px;
-    }
+  h1 {
+    font-size: 40px;
+  }
 
-    h1 span {
-        font-size: 20px;
-    }
+  h1 span {
+    font-size: 20px;
+  }
 }
 
 #select-action {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .send-love {
-    margin-bottom: 20px;
-    color: whitesmoke;
+  margin-bottom: 20px;
+  color: whitesmoke;
 
-    >div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  >div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    p {
-        margin-bottom: 5px;
-    }
+  p {
+    margin-bottom: 5px;
+  }
 
-    img {
-        width: 14px;
-        cursor: pointer;
-        margin-left: 5px;
-    }
+  img {
+    width: 14px;
+    cursor: pointer;
+    margin-left: 5px;
+  }
 
-    input {
-        color: white;
-        border: 1px solid rgba(179, 51, 181, .8);
-        background: rgba(179, 51, 181, .2);
-        border-radius: 3px;
-        padding: 3px;
-        width: 283px;
-    }
+  input {
+    color: white;
+    border: 1px solid rgba(179, 51, 181, .8);
+    background: rgba(179, 51, 181, .2);
+    border-radius: 3px;
+    padding: 3px;
+    width: 283px;
+  }
 
-    span {
-        margin-top: 20px;
-        display: block;
-        font-size: 10px;
-        color: rgba(255, 255, 255, .2);
-    }
+  span {
+    margin-top: 20px;
+    display: block;
+    font-size: 10px;
+    color: rgba(255, 255, 255, .2);
+  }
+}
+
+.action-cont {
+  max-width: 350px;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 50px;
+
+  input {
+    width: 100%;
+    font-size: 20px;
+    padding: 5px 10px;
+    border: 0px;
+    color: white;
+    background: rgb(0 0 0 / 30%);
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 20px;
+    padding: 5px 10px;
+    background: $eldritch;
+    border: 0px;
+    color: white;
+  }
 }
