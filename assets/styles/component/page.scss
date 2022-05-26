@@ -25,7 +25,7 @@ body {
 h1 {
     color: $eldritch;
     font-size: 50px;
-    margin: 20px 0px 30px;
+    margin: 0px 0px 30px;
     text-align: center;
 
     span {
@@ -51,4 +51,34 @@ button {
 
 #select-action {
     margin-bottom: 10px;
+}
+
+.send-love {
+    margin-bottom: 50px;
+    color: whitesmoke;
+
+    >div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    p {
+        margin-bottom: 5px;
+    }
+
+    img {
+        width: 14px;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+
+    input {
+        color: white;
+        border: 1px solid rgba(179, 51, 181, .8);
+        background: rgba(179, 51, 181, .2);
+        border-radius: 3px;
+        padding: 3px;
+        width: 283px;
+    }
 }
