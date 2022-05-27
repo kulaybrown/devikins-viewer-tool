@@ -11,20 +11,20 @@ $(".devikid-info").each((index, element) => new DevikidInfo(element));
 
 
 $(".send-love img").on("click", function(){
-    copyToClipboard();
+  copyToClipboard();
 })
 $("#forbeer").on("click", function(){
-    copyToClipboard();
+  copyToClipboard();
 })
 function copyToClipboard() {
-    /* Get the text field */
-    var copyText = document.getElementById("forbeer");
-  
-    // /* Select the text field */
-    copyText.value;
-    copyText.setSelectionRange(0, 99999); /* For mobile devices */
-  
-     /* Copy the text inside the text field */
-    navigator.clipboard.writeText(copyText.value);
-    // navigator.clipboard.writeText(text)
+  /* Get the text field */
+  var copyText = document.getElementById("forbeer");
+
+  // /* Select the text field */
+  copyText.value;
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+  // navigator.clipboard.writeText(text)
 }

@@ -4,6 +4,7 @@ class Selection {
   constructor(element) {
     this.$element = $(element);
     this.addListeners();
+    
   }
 
   addListeners() {
@@ -27,6 +28,19 @@ class Selection {
     function handleSetSelectionActive() {
       $(`[data-select='${selected}']`).addClass("selection--selected");
       $("#select-action").val(selected);
+    }
+
+    getURLParams()
+    function getURLParams() {
+      var url_string = window.location.href;
+      var url = new URL(url_string);
+      var c = url.searchParams.get("s");
+      // paramsProduct = c;
+      for (let index = 0; index < $(".selection").length; index++) {
+        $($(".selection")[index]).removeClass("selection--selected");
+      }
+      $(`[data-select='${c}']`).addClass("selection--selected");
+      $("#select-action").val(c);
     }
   }
 }
