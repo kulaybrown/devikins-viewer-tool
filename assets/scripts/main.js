@@ -2,10 +2,12 @@ import $ from "jquery";
 import Selection from "./components/Selection";
 import FindParent from "./components/FindParent";
 import DevikidInfo from "./components/DevikidInfo";
+// import UserRoster from "./components/UserRoster";
 
 $("#select-action").each((index, element) => new Selection(element));
 $(".find-parent").each((index, element) => new FindParent(element));
 $(".devikid-info").each((index, element) => new DevikidInfo(element));
+// $(".user-roster-info").each((index, element) => new UserRoster(element));
 // console.log($(".selection").length)
 
 

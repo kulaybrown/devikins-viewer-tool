@@ -1,5 +1,6 @@
 import $ from "jquery";
 
+const setSelected = "devikid";
 class Selection {
   constructor(element) {
     this.$element = $(element);
@@ -8,7 +9,7 @@ class Selection {
   }
 
   addListeners() {
-    let selected = "devikid";
+    let selected = setSelected;
     this.$element.on("change", function(){
       selected = $(this).find(":selected").val()
       this.findParent = $(".find-parent");
@@ -39,8 +40,9 @@ class Selection {
       for (let index = 0; index < $(".selection").length; index++) {
         $($(".selection")[index]).removeClass("selection--selected");
       }
-      $(`[data-select='${c}']`).addClass("selection--selected");
-      $("#select-action").val(c);
+
+      $(`[data-select='${c ? c : setSelected}']`).addClass("selection--selected");
+      $("#select-action").val(c ? c : setSelected);
     }
   }
 }
