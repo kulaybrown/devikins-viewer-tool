@@ -203,7 +203,7 @@ class FindParent {
 
 
         } else {
-          parentContainer.append('<p style="color: white;">No Parents</p>');
+          parentContainer.append('<p class="no-parents1">No Parents</p>');
         }
 
 
