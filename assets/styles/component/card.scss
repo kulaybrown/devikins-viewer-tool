@@ -137,6 +137,7 @@
 
   [data-gene='unique'] {
     border-color: $unique;
+    box-shadow: 0 0 15px 0 $unique;
   }
 
   [data-gene='bonded'] {

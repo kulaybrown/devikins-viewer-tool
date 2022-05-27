@@ -14,17 +14,28 @@
 <body>
   <div class="container">
     <select id="select-action">
-      <option value="parents">Find Deviparents</option>
-      <option value="roster" disabled>Roster</option>
+      <option value="deviparents">Find Deviparents</option>
+      <option value="devikid">Devikid Info</option>
       <option value="store" disabled>Store</option>
     </select>
-    <div class="find-parent">
-      <div class="find-parent-action">
+
+    <div class="find-parent selection" data-select="deviparents">
+      <div class="find-parent-action action-cont">
         <input type="number" placeholder="Devikid ID">
         <button role="button">Search</button>
       </div>
       <div class="parent-container" id="family-tree"></div>
     </div>
+
+    <div class="devikid-info selection" data-select="devikid">
+      <div class="devikid-info-action action-cont">
+        <input type="number" placeholder="Devikid ID">
+        <button role="button">Search</button>
+      </div>
+      <div class="devikid-info-container"></div>
+    </div>
+
+
     <div class="send-love">
       <p>Send ❤️ for me to buy a 🍺 Thank you</p>
       <div>

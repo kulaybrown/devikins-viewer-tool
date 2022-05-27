@@ -1,0 +1,79 @@
+.devikid-info {
+  .devikid-data {
+    max-width: 500px;
+    margin: 20px auto 40px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .devikid-data-box {
+    border: 1px solid $eldritch;
+    background: rgba($eldritch, .08);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 3px;
+
+    >p {
+      margin: 0px;
+
+      &:nth-child(1) {
+        font-weight: 300;
+        color: rgba($uncommon, .7);
+        margin-bottom: 5px;
+        font-size: 12px;
+        text-transform: capitalize;
+      }
+
+      &:nth-child(2) {
+        color: $unique;
+        font-size: 16px;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .devikid-data-bar {
+    border: 1px solid #aa33b5;
+    background: rgba(170, 51, 181, .08);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 3px;
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    overflow: hidden;
+
+    p {
+      margin: 0px;
+
+      &:nth-child(1) {
+        font-weight: 300;
+        color: rgba($uncommon, .7);
+        margin-bottom: 5px;
+        font-size: 12px;
+      }
+
+      &:nth-child(2) {
+        color: $unique;
+        font-size: 16px;
+      }
+    }
+
+    .devikid-bar-info {
+      z-index: 1;
+      position: relative;
+    }
+
+    .devikid-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 66%;
+      background: rgba(purple, .5);
+      // box-shadow: 0 0 10px 0 $eldritch;
+    }
+  }
+}
