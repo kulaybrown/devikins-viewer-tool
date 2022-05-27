@@ -86,3 +86,70 @@ export function handleAffinity(aff) {
   }
   return x;
 }
+
+export function handleProcrationLeft(breedcount) {
+  let x = 0;
+  return x = 10 - breedcount;
+}
+
+export function handleLifeStage(lifestage) {
+  let x = "";
+  if(lifestage === 0) {
+    x = "Embryo";
+  } else if(lifestage === 1) {
+    x = "Toddler";
+  } else if(lifestage === 2) {
+    x = "Adult";
+  }
+  return x;
+}
+
+export function handleAncestry(ancestry) {
+  let x ="";
+  if(ancestry === 1) {
+    x = "Lunarian";
+  } else if(ancestry === 2) {
+    x = "Ochran";
+  } else if(ancestry === 3) {
+    x = "Glyesian";
+  } else if(ancestry === 4) {
+    x = "Maarish";
+  } else if(ancestry === 5) {
+    x = "Khoroth";
+  }
+  return x;
+}
+
+export function handlePersonality(personality) {
+  let x = "";
+  if(personality === 1) {
+    x = "Angry";
+  } else if(personality === 2) {
+    x = "Curious";
+  } else if(personality === 3) {
+    x = "Feisty";
+  } else if(personality === 4) {
+    x = "Nerdy";
+  } else if(personality === 5) {
+    x = "Polite";
+  } else if(personality === 6) {
+    x = "Reckless";
+  } else if(personality === 7) {
+    x = "Resilient";
+  } else if(personality === 8) {
+    x = "Sassy";
+  } else if(personality === 9) {
+    x = "Shy";
+  } else if(personality === 10) {
+    x = "Stoic";
+  } else if(personality === 11) {
+    x = "Klever";
+  } else if(personality === 12) {
+    x = "Lavish";
+  } else if(personality === 13) {
+    x = "Miner";
+  } else if(personality === 14) {
+    x = "Glitched";
+  }
+  return x;
+}

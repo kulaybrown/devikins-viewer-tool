@@ -1,5 +1,13 @@
 import $ from "jquery";
-import {handleImgIndexPath, handleRarity, handleGenes, handleAffinity} from "./helpers";
+import {handleImgIndexPath, 
+  handleRarity, 
+  handleGenes, 
+  handleAffinity, 
+  handleProcrationLeft, 
+  handleLifeStage, 
+  handleAncestry, 
+  handlePersonality
+} from "./helpers";
 
 class DevikidInfo {
   constructor(element) {
@@ -70,58 +78,58 @@ class DevikidInfo {
           <div class='devikid-data'>
             <div class='devikid-data-box rarity'>
               <p>Rarity</p>
-              <p>Rare</p>
+              <p>${handleRarity(result.OverallAffinity)}</p>
             </div>
             <div class='devikid-data-box proc-left'>
               <p>Procreation Left</p>
-              <p>9</p>
+              <p>${handleProcrationLeft(result.BreedCount)}</p>
             </div>
             <div class='devikid-data-box life-stage'>
               <p>Life Stage</p>
-              <p>Adult</p>
+              <p>${handleLifeStage(result.Stage)}</p>
             </div>
             <div class='devikid-data-box ancestry'>
               <p>Ancestry</p>
-              <p>Ochran</p>
+              <p>${handleAncestry(result.AncestryType)}</p>
             </div>
             <div class='devikid-data-box personality'>
               <p>Personality</p>
-              <p>Reckless</p>
+              <p>${handlePersonality(result.Personality)}</p>
             </div>
-            <div class='devikid-data-bar agi-attr'>
+            <div class='devikid-data-bar'>
               <div class='devikid-bar-info'>
                 <p>Vitality Attribute</p>
-                <p>55</p>
+                <p>${result.VitBase}</p>
               </div>
-              <div class='devikid-bar' style='width: 55%;'></div>
+              <div class='devikid-bar' style='width: ${result.VitBase}%;'></div>
             </div>
-            <div class='devikid-data-bar agi-attr'>
+            <div class='devikid-data-bar'>
               <div class='devikid-bar-info'>
                 <p>Power Attribute</p>
-                <p>60</p>
+                <p>${result.PowBase}</p>
               </div>
-              <div class='devikid-bar' style='width: 60%;'></div>
+              <div class='devikid-bar' style='width: ${result.PowBase}%;'></div>
             </div>
-            <div class='devikid-data-bar agi-attr'>
+            <div class='devikid-data-bar'>
               <div class='devikid-bar-info'>
                 <p>Fortitude Attribute</p>
-                <p>46</p>
+                <p>${result.ForBase}</p>
               </div>
-              <div class='devikid-bar' style='width: 46%;'></div>
+              <div class='devikid-bar' style='width: ${result.ForBase}%;'></div>
             </div>
-            <div class='devikid-data-bar agi-attr'>
+            <div class='devikid-data-bar'>
               <div class='devikid-bar-info'>
                 <p>Agility Attribute</p>
-                <p>70</p>
+                <p>${result.AgiBase}</p>
               </div>
-              <div class='devikid-bar' style='width: 70%;'></div>
+              <div class='devikid-bar' style='width: ${result.AgiBase}%;'></div>
             </div>
-            <div class='devikid-data-bar agi-attr'>
+            <div class='devikid-data-bar'>
               <div class='devikid-bar-info'>
                 <p>Sanity Attribute</p>
-                <p>100</p>
+                <p>${result.SanBase}</p>
               </div>
-              <div class='devikid-bar' style='width: 100%;'></div>
+              <div class='devikid-bar' style='width: ${result.SanBase}%;'></div>
             </div>
           </div>
         `;
@@ -147,30 +155,29 @@ class DevikidInfo {
 
  
         let id = $(selectdeviId).attr('devi-id');
-        if(id === JSON.stringify(result.SequenceCounter)) {
-          $(selectdeviId).attr('devi-rarity', handleRarity(result.OverallAffinity));
+        $(selectdeviId).attr('devi-rarity', handleRarity(result.OverallAffinity));
+      
+        $(geneMouth).attr("data-gene", handleGenes(result.Eyes ? result.Mouth.Tag : "bonded"))
+        $(geneEye).attr("data-gene", handleGenes(result.Eyes ? result.Eyes.Tag : "bonded"))
+        $(geneEar).attr("data-gene", handleGenes(result.Eyes ? result.Ears.Tag : "bonded"))
+        $(geneHair).attr("data-gene", handleGenes(result.Eyes ? result.Hair.Tag : "bonded"))
+        $(geneHorn).attr("data-gene", handleGenes(result.Eyes ? result.Horns.Tag : "bonded"))
+      
+        $(affVit).attr("data-aff", handleAffinity(result.VitAffinity))
+        $(affPow).attr("data-aff", handleAffinity(result.PowAffinity))
+        $(affFor).attr("data-aff", handleAffinity(result.ForAffinity))
+        $(affAgi).attr("data-aff", handleAffinity(result.AgiAffinity))
+        $(affSan).attr("data-aff", handleAffinity(result.SanAffinity))
+
+        $(affVit).find("span").text(result.VitAffinity);
+        $(affPow).find("span").text(result.PowAffinity);
+        $(affFor).find("span").text(result.ForAffinity);
+        $(affAgi).find("span").text(result.AgiAffinity);
+        $(affSan).find("span").text(result.SanAffinity);
+
+        $(deviOA).text(result.OverallAffinity);
+
         
-          $(geneMouth).attr("data-gene", handleGenes(result.Eyes ? result.Mouth.Tag : "bonded"))
-          $(geneEye).attr("data-gene", handleGenes(result.Eyes ? result.Eyes.Tag : "bonded"))
-          $(geneEar).attr("data-gene", handleGenes(result.Eyes ? result.Ears.Tag : "bonded"))
-          $(geneHair).attr("data-gene", handleGenes(result.Eyes ? result.Hair.Tag : "bonded"))
-          $(geneHorn).attr("data-gene", handleGenes(result.Eyes ? result.Horns.Tag : "bonded"))
-        
-          $(affVit).attr("data-aff", handleAffinity(result.VitAffinity))
-          $(affPow).attr("data-aff", handleAffinity(result.PowAffinity))
-          $(affFor).attr("data-aff", handleAffinity(result.ForAffinity))
-          $(affAgi).attr("data-aff", handleAffinity(result.AgiAffinity))
-          $(affSan).attr("data-aff", handleAffinity(result.SanAffinity))
-
-          $(affVit).find("span").text(result.VitAffinity);
-          $(affPow).find("span").text(result.PowAffinity);
-          $(affFor).find("span").text(result.ForAffinity);
-          $(affAgi).find("span").text(result.AgiAffinity);
-          $(affSan).find("span").text(result.SanAffinity);
-
-          $(deviOA).text(result.OverallAffinity);
-
-        }
         
   
       },
