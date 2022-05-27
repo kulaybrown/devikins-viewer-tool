@@ -7,19 +7,14 @@ class Selection {
   }
 
   addListeners() {
-    let selected = "deviparents";
+    let selected = "devikid";
     this.$element.on("change", function(){
       selected = $(this).find(":selected").val()
       this.findParent = $(".find-parent");
       this.devikidInfo = $(".devikid-info");
       console.log(selected)
-      if(selected === "deviparents"){
-        handleRemoveSelection()
-        this.findParent.addClass("selection--selected");
-      } else if(selected === "devikid"){
-        handleRemoveSelection()
-        this.devikidInfo.addClass("selection--selected")
-      }
+      handleRemoveSelection();
+      $(`[data-select='${selected}']`).addClass("selection--selected");
 
       function handleRemoveSelection() {
         for (let index = 0; index < $(".selection").length; index++) {
@@ -27,6 +22,12 @@ class Selection {
         }
       }
     })
+    
+    handleSetSelectionActive()
+    function handleSetSelectionActive() {
+      $(`[data-select='${selected}']`).addClass("selection--selected");
+      $("#select-action").val(selected);
+    }
   }
 }
 
