@@ -89,7 +89,12 @@ export function handleAffinity(aff) {
 
 export function handleProcrationLeft(breedcount) {
   let x = 0;
-  return x = 10 - breedcount;
+  if(breedcount === undefined) {
+    x = 10;
+  } else {
+    x = 10 - breedcount;
+  }
+  return x;
 }
 
 export function handleLifeStage(lifestage) {
