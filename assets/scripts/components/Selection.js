@@ -12,7 +12,7 @@ class Selection {
       selected = $(this).find(":selected").val()
       this.findParent = $(".find-parent");
       this.devikidInfo = $(".devikid-info");
-      console.log(selected)
+      // console.log(selected)
       handleRemoveSelection();
       $(`[data-select='${selected}']`).addClass("selection--selected");
 

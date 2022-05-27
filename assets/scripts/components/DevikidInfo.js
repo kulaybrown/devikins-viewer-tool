@@ -38,10 +38,6 @@ class DevikidInfo {
   }
 
   handleAPI(deviChildID) {
-    let deviGrandParent = [];
-    let deviParent = [];
-    let deviFamily = [];
-    let deviData = [];
     $.ajax({
       url: `https://inventory.api.devikins.com/asset/${deviChildID}`,
       type: "GET",
@@ -50,7 +46,7 @@ class DevikidInfo {
       },
       success: function (result) {
         const parentContainer = $(".devikid-info-container");
-        console.log(result)
+        // console.log(result)
         $(parentContainer).empty()
         const devikid = `<div class='' devi-id='${deviChildID}' id='child' devi-rarity=''>
           <div class='card-m' style='background-image: url(https://img.devikins.com/${handleImgIndexPath(deviChildID)}/${deviChildID}.png);'>
@@ -153,8 +149,6 @@ class DevikidInfo {
 
         const deviOA = selectdeviId.find(".devi-oa");
 
- 
-        let id = $(selectdeviId).attr('devi-id');
         $(selectdeviId).attr('devi-rarity', handleRarity(result.OverallAffinity));
       
         $(geneMouth).attr("data-gene", handleGenes(result.Eyes ? result.Mouth.Tag : "bonded"))
