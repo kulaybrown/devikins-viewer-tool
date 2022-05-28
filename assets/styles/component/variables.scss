@@ -8,12 +8,14 @@ $unique: #fff;
 $bonded: #00007C;
 
 $nero: #1c1c1c;
+$purple: #aa33b5;
 
 $boxShadowUncommon: 0px 0px 10px 0px $common;
 $boxShadowCommon: 0px 0px 10px 0px $uncommon;
 $boxShadowRare: 0px 0px 10px 0px $rare;
 $boxShadowMythic: 0px 0px 10px 0px $mythic;
 $boxShadowEldritch: 0px 0px 10px 0px $eldritch;
+$imgPath: "../../assets/images";
 
 .gradient-common {
     background: rgb(158, 93, 28);
