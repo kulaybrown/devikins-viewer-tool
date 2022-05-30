@@ -6,7 +6,8 @@ import {handleImgIndexPath,
   handleProcrationLeft, 
   handleLifeStage, 
   handleAncestry, 
-  handlePersonality
+  handlePersonality,
+  errorDevikinImg
 } from "./helpers";
 
 class DevikidInfo {
@@ -47,9 +48,21 @@ class DevikidInfo {
       success: function (result) {
         const parentContainer = $(".devikid-info-container");
         // console.log(result)
+        let dvkImg = `https://img.devikins.com/${handleImgIndexPath(deviChildID)}/${deviChildID}.png`;
+
+        function errorImage() {
+          var tester=new Image();
+          tester.onerror=imageNotFound;
+          tester.src=dvkImg;
+          function imageNotFound() {
+            $('.card-m').css({"background": "url(../../assets/images/pending-preview.png) no-repeat center center", "background-size": "140%"});
+          }
+        }
+        
+
         $(parentContainer).empty()
         const devikid = `<div class='' devi-id='${deviChildID}' id='child' devi-rarity=''>
-          <div class='card-m' style='background-image: url(https://img.devikins.com/${handleImgIndexPath(deviChildID)}/${deviChildID}.png);'>
+          <div class='card-m' style='background-image: url(${dvkImg});'>
             <div class='gene-cont'>
               <div class='gene gene-mouth'></div>
               <div class='gene gene-eye'></div>
@@ -130,7 +143,8 @@ class DevikidInfo {
           </div>
         `;
         parentContainer.append(deviText)
-
+        errorImage();
+        
 
 
         const selectdeviId = $(parentContainer.find('[devi-id]'));
@@ -177,6 +191,13 @@ class DevikidInfo {
       },
       error: function () {
         console.log("error");
+        const parentContainer = $(".devikid-info-container");
+        $(parentContainer).empty()
+        parentContainer.append(`
+        <div class='pls-try-again'>
+          <div>Please Try Again</div>
+        </div>
+        `)
       }
     });
 
