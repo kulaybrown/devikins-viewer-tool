@@ -147,3 +147,52 @@ button {
   border: 1px solid $mythic;
   padding: 10px;
 }
+
+#dvk-price {
+  position: fixed;
+  bottom: 185px;
+  right: 10px;
+  padding: 10px;
+  background: rgba(170, 51, 181, .1);
+  border-radius: 10px;
+  border: 1px solid $eldritch;
+
+  @media (max-width: 991px) {
+    border: 0;
+    background: transparent;
+    display: inline-block;
+    margin-bottom: 10px;
+    position: initial;
+  }
+
+  p {
+    margin: 0px;
+    color: white;
+    border-bottom: 1px solid rgba($eldritch, .2);
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: 5px;
+      width: 30px;
+    }
+
+    @media (max-width: 991px) {
+      border: 0px;
+      margin: 0;
+      padding-bottom: 0px;
+    }
+  }
+
+  >div {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 22px;
+
+
+  }
+
+}
