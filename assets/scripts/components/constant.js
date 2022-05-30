@@ -1,4 +1,4 @@
-const imgPath = "./assets/images/";
+export const imgPath = "./assets/images/";
 
 // const imgErrorPlaceholder = `${imgPath}pending-preview.png`;
 

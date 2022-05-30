@@ -1,5 +1,6 @@
 import $ from "jquery";
 import {handleImgIndexPath, handleRarity, handleGenes, handleAffinity} from "./helpers";
+import {imgPath} from "./constant";
 
 class FindParent {
   constructor(element) {
@@ -143,7 +144,7 @@ class FindParent {
             parentImg1.onerror=imageNotFound;
             parentImg1.src=dvkParentImg1;
             function imageNotFound() {
-              $(`#parents [devi-id='${p1}'] > div`).css({"background": "url(./assets/images/pending-preview.png) no-repeat center center", "background-size": "140%"});
+              $(`#parents [devi-id='${p1}'] > div`).css({"background": `url(${imgPath}pending-preview.png) no-repeat center center`, "background-size": "140%"});
             }
           }
           function errorP2Image() {
@@ -151,7 +152,7 @@ class FindParent {
             parentImg2.onerror=imageNotFound;
             parentImg2.src=dvkParentImg2;
             function imageNotFound() {
-              $(`#parents [devi-id='${p2}'] > div`).css({"background": "url(./assets/images/pending-preview.png) no-repeat center center", "background-size": "140%"});
+              $(`#parents [devi-id='${p2}'] > div`).css({"background": `url(${imgPath}pending-preview.png) no-repeat center center`, "background-size": "140%"});
             }
           }
           parentContainer.find('#parents .pair').append(`<div class='parent-item card-m' ${p1 && `devi-id='${p1}'`} devi-rarity=''>
@@ -207,7 +208,7 @@ class FindParent {
             function imageChildNotFound() {
               // console.log(childImg1);
               // console.log("error 123")
-              $('#child .card-m').css({"background": "url(./assets/images/pending-preview.png) no-repeat center center", "background-size": "140%"});
+              $('#child .card-m').css({"background": `url(${imgPath}pending-preview.png) no-repeat center center`, "background-size": "140%"});
             }
           }
           const child = `<div class='generation' devi-id='${deviChildID}' id='child' devi-rarity=''>

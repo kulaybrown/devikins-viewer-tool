@@ -9,6 +9,7 @@ import {handleImgIndexPath,
   handlePersonality,
   errorDevikinImg
 } from "./helpers";
+import {imgPath} from "./constant";
 
 class DevikidInfo {
   constructor(element) {
@@ -55,7 +56,7 @@ class DevikidInfo {
           tester.onerror=imageNotFound;
           tester.src=dvkImg;
           function imageNotFound() {
-            $('.card-m').css({"background": "url(../../assets/images/pending-preview.png) no-repeat center center", "background-size": "140%"});
+            $('.card-m').css({"background": `url(${imgPath}pending-preview.png) no-repeat center center`, "background-size": "140%"});
           }
         }
         
