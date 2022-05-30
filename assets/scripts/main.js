@@ -3,11 +3,13 @@ import Selection from "./components/Selection";
 import FindParent from "./components/FindParent";
 import DevikidInfo from "./components/DevikidInfo";
 // import UserRoster from "./components/UserRoster";
+import Nursery from "./components/Nursery";
 
 $("#select-action").each((index, element) => new Selection(element));
 $(".find-parent").each((index, element) => new FindParent(element));
 $(".devikid-info").each((index, element) => new DevikidInfo(element));
 // $(".user-roster-info").each((index, element) => new UserRoster(element));
+$(".nursery-info").each((index, element) => new Nursery(element));
 // console.log($(".selection").length)
 
 

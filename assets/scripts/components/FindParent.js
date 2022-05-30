@@ -133,11 +133,29 @@ class FindParent {
             });
           }
 
-
+          
           const parent = '<div class="generation" id="parents"><div class="pair"></div></div>'
           parentContainer.append(parent)
+          const dvkParentImg1 = `https://img.devikins.com/${handleImgIndexPath(p1)}/${p1}.png`;
+          const dvkParentImg2 = `https://img.devikins.com/${handleImgIndexPath(p2)}/${p2}.png`;
+          function errorP1Image() {
+            var parentImg1=new Image();
+            parentImg1.onerror=imageNotFound;
+            parentImg1.src=dvkParentImg1;
+            function imageNotFound() {
+              $(`#parents [devi-id='${p1}'] > div`).css({"background": "url(../../assets/images/pending-preview.png) no-repeat center center", "background-size": "140%"});
+            }
+          }
+          function errorP2Image() {
+            var parentImg2=new Image();
+            parentImg2.onerror=imageNotFound;
+            parentImg2.src=dvkParentImg2;
+            function imageNotFound() {
+              $(`#parents [devi-id='${p2}'] > div`).css({"background": "url(../../assets/images/pending-preview.png) no-repeat center center", "background-size": "140%"});
+            }
+          }
           parentContainer.find('#parents .pair').append(`<div class='parent-item card-m' ${p1 && `devi-id='${p1}'`} devi-rarity=''>
-            <div style='background-image: url(https://img.devikins.com/${handleImgIndexPath(p1)}/${p1}.png);'>
+            <div style='background-image: url(${dvkParentImg1});'>
               <div class='gene-cont'>
                 <div class='gene gene-mouth'></div>
                 <div class='gene gene-eye'></div>
@@ -158,7 +176,7 @@ class FindParent {
           
           </div>`);
           parentContainer.find('#parents .pair').append(`<div class='parent-item card-f' ${p2 && `devi-id='${p2}'`} devi-rarity=''>
-            <div style='background-image: url(https://img.devikins.com/${handleImgIndexPath(p2)}/${p2}.png);'>
+            <div style='background-image: url(${dvkParentImg2});'>
               <div class='gene-cont'>
                 <div class='gene gene-mouth'></div>
                 <div class='gene gene-eye'></div>
@@ -178,9 +196,22 @@ class FindParent {
             </div>
           </div>`);
 
+          errorP1Image()
+          errorP2Image()
+          const childImg = `https://img.devikins.com/${handleImgIndexPath(deviChildID)}/${deviChildID}.png`
+          function errorImage1() {
+            var childImg1=new Image();
+            childImg1.onerror=imageChildNotFound;
+            childImg1.src=childImg;
 
+            function imageChildNotFound() {
+              // console.log(childImg1);
+              // console.log("error 123")
+              $('#child .card-m').css({"background": "url(../../assets/images/pending-preview.png) no-repeat center center", "background-size": "140%"});
+            }
+          }
           const child = `<div class='generation' devi-id='${deviChildID}' id='child' devi-rarity=''>
-          <div class='card-m' style='background-image: url(https://img.devikins.com/${handleImgIndexPath(deviChildID)}/${deviChildID}.png);'>
+          <div class='card-m' style='background-image: url(${childImg});'>
             <div class='gene-cont'>
               <div class='gene gene-mouth'></div>
               <div class='gene gene-eye'></div>
@@ -200,7 +231,7 @@ class FindParent {
           </div>
         </div>`;
         parentContainer.append(child)
-
+        errorImage1();
 
         } else {
           parentContainer.append('<p class="no-parents1">No Parents</p>');
@@ -213,7 +244,14 @@ class FindParent {
         getParent()
       },
       error: function () {
-        console.log("error");
+        // console.log("error 123");
+        const parentContainer = $(".parent-container");
+        $(parentContainer).empty()
+        parentContainer.append(`
+        <div class='pls-try-again'>
+          <div>Please Try Again</div>
+        </div>
+        `);
       }
     });
     

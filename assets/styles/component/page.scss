@@ -127,3 +127,15 @@ button {
     color: white;
   }
 }
+
+.no-parents1,
+.pls-try-again {
+  color: white;
+  display: inline-block;
+  margin: auto;
+  background: rgba($mythic, .11);
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid $mythic;
+  padding: 10px;
+}

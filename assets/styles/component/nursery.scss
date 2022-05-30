@@ -1,0 +1,72 @@
+.nursery-info {
+  margin: 30px 0px;
+
+  .nursery-info-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  .nursery-item {
+    border: 1px solid $purple;
+    background: rgba($eldritch, .08);
+    max-width: 400px;
+    width: 100%;
+    border-radius: 5px;
+    background: #1d1a2f;
+
+    >div {
+      display: flex;
+      flex-wrap: wrap;
+
+      >div {
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .nursery-personality {
+    margin-right: 3px;
+
+    >div {
+      cursor: pointer;
+      width: 150px;
+      height: 35px;
+      background-repeat: no-repeat !important;
+      background-position: center right !important;
+      border: 1px solid $purple;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 3px;
+      border-radius: 5px;
+      background-size: 90% !important;
+      opacity: .8;
+      transition: background-size .3s;
+      text-transform: capitalize;
+
+      &:hover {
+        box-shadow: 0px 0px 5px 0px $purple;
+        background-size: 100% !important;
+      }
+
+      &.selected {
+        font-size: 16px;
+        opacity: 1;
+        box-shadow: 0px 0px 10px 0px $purple;
+        background-size: 100% !important;
+      }
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
