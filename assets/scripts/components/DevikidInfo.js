@@ -6,8 +6,7 @@ import {handleImgIndexPath,
   handleProcrationLeft, 
   handleLifeStage, 
   handleAncestry, 
-  handlePersonality,
-  errorDevikinImg
+  handlePersonality
 } from "./helpers";
 import {imgPath} from "./constant";
 
