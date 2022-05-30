@@ -32,3 +32,28 @@ function copyToClipboard() {
   navigator.clipboard.writeText(copyText.value);
   // navigator.clipboard.writeText(text)
 }
+
+
+
+// DVK Price
+let dvk_price = 0; 
+async function get_dvk_price()
+{
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://prices.endpoints.services.klever.io/v1/prices", true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = async function(){
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            let value = JSON.parse(this.response)
+            dvk_price = value.symbols[0].price
+            
+
+            document.querySelector("#dvk-price > div").innerHTML = "$"+ value.symbols[0].price.toFixed(6);
+			
+        } else {
+            document.querySelector("#dvk-price > div").innerHTML = "$-";
+        }
+    }
+    xhr.send(JSON.stringify({"names": "DVK/TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"}));
+}
+get_dvk_price();
