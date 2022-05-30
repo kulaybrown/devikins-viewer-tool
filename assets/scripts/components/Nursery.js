@@ -8,12 +8,14 @@ class Selection {
     this.$itemsCont = this.$nurseryItems.find("> div");
     this.$nurseryPersonality = this.$element.find(".nursery-personality");
     this.addListeners();
+
   }
 
   addListeners() {
     
     this.handleRenderPersonality();
     this.handleSelectedPersonality()
+    this.handleDefaultSelected();
   }
 
   handleRenderPersonality() {
@@ -41,9 +43,9 @@ class Selection {
       nurseryPersonality.forEach(element => {
          if(element.personality === personality) {
           element.items.forEach(element2 => {
-            console.log(element2);
+            // console.log(element2);
             const appendItems = `
-              <div><img src="${element2}" alt="${element.personality}" /></div>
+              <div><img src="${element2}" alt="nursy items" /></div>
             `;
             $(".nursery-item > div").append(appendItems);
           });
@@ -53,7 +55,16 @@ class Selection {
     }
   }
 
-  
+  handleDefaultSelected() {
+    $(".nursery-personality > div:first-child").addClass("selected")
+    nurseryPersonality[0].items.forEach(element => {
+      // console.log(element);
+      const appendItems = `
+        <div><img src="${element}" alt="nursy items" /></div>
+      `;
+      $(".nursery-item > div").append(appendItems);
+    });
+  }
 }
 
 export default Selection;
