@@ -19,14 +19,21 @@ const glitched = `${imgPath}glitched-b.png`;
 const beta = `${imgPath}beta-b.png`;
 
 const cje = `${imgPath}cje.jpg`;
+const cmv = `${imgPath}cmv.jpg`;
+const csb = `${imgPath}csb.jpg`;
 const css = `${imgPath}css.jpg`;
 const cts = `${imgPath}cts.jpg`;
-const cmv = `${imgPath}cmv.jpg`;
+const ubm = `${imgPath}ubm.jpg`;
 const uec = `${imgPath}uec.jpg`;
-const rrs = `${imgPath}rrs.jpg`;
-const rct = `${imgPath}rct.jpg`;
+const ufr = `${imgPath}ufr.jpg`;
+const upf = `${imgPath}upf.jpg`;
+const uxr = `${imgPath}uxr.jpg`;
+const rbc = `${imgPath}rbc.jpg`;
+const rct = `${imgPath}rsb.jpg`;
 const rhm = `${imgPath}rhm.jpg`;
+const rrs = `${imgPath}rrs.jpg`;
 const rsb = `${imgPath}rsb.jpg`;
+
 export const nurseryPersonality = [
   {
     personality: "angry",
@@ -41,67 +48,67 @@ export const nurseryPersonality = [
   {
     personality: "feisty",
     img: feisty,
-    items: [rct],
+    items: [uxr,rbc,upf,csb,ubm],
   },
   {
     personality: "nerdy",
     img: nerdy,
-    items: [rct],
+    items: [rrs,cts,upf,ufr,rhm],
   },
   {
     personality: "polite",
     img: polite,
-    items: [rct],
+    items: [cmv,css,rct,csb,uec],
   },
   {
     personality: "reckless",
     img: reckless,
-    items: [rct],
+    items: [uxr,rbc,rsb,csb,uec],
   },
   {
     personality: "resilient",
     img: resilient,
-    items: [rct],
+    items: [cmv,css,rct,cje,ubm],
   },
   {
     personality: "sassy",
     img: sassy,
-    items: [rct],
+    items: [rrs,cts,upf,ufr,uec],
   },
   {
     personality: "shy",
     img: shy,
-    items: [rct],
+    items: [cmv,rbc,rsb,csb,rhm],
   },
   {
     personality: "stoic",
     img: stoic,
-    items: [rct],
+    items: [uxr,cts,rsb,ufr,uec],
   },
   {
     personality: "klever",
     img: klever,
-    items: [rct],
+    items: [rrs,css,upf,cje,rhm],
   },
   {
     personality: "lavish",
     img: lavish,
-    items: [rct],
+    items: [cmv,rbc,rct,csb,uec],
   },
   {
     personality: "miner",
     img: miner,
-    items: [rct],
+    items: [rrs,rbc,rct,ufr,ubm],
   },
   {
     personality: "glitched",
     img: glitched,
-    items: [rct],
+    items: [uxr,css,upf,ufr,ubm],
   },
   {
     personality: "beta",
     img: beta,
-    items: [rct],
+    items: [uxr,css,rsb,cje,ubm],
   },
 ];
 

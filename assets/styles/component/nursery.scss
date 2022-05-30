@@ -24,6 +24,11 @@
         height: 100px;
         margin: 5px;
 
+        @media (max-width: 767px) {
+          width: 70px;
+          height: 70px;
+        }
+
         img {
           width: 100%;
         }
@@ -52,6 +57,11 @@
       transition: background-size .3s;
       text-transform: capitalize;
 
+      @media (max-width: 767px) {
+        width: 90px;
+        padding: 5px;
+      }
+
       &:hover {
         box-shadow: 0px 0px 5px 0px $purple;
         background-size: 100% !important;
@@ -68,5 +78,27 @@
         margin-bottom: 0px;
       }
     }
+  }
+}
+
+.nursery-note {
+  color: white;
+  font-size: 16px;
+  max-width: 490px;
+  margin: auto;
+
+  img {
+    margin: 3px 5px;
+    width: 50px;
+  }
+
+  p {
+    font-weight: 300;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
