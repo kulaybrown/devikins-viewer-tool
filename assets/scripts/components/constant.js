@@ -1,29 +1,32 @@
-const imgAngry = "../../assets/images/";
-const angry = `${imgAngry}angry-b.png`;
-const curious = `${imgAngry}curious-b.png`;
-const feisty = `${imgAngry}feisty-b.png`;
-const nerdy = `${imgAngry}nerdy-b.png`;
-const polite = `${imgAngry}polite-b.png`;
-const reckless = `${imgAngry}reckless-b.png`;
-const resilient = `${imgAngry}resilient-b.png`;
-const sassy = `${imgAngry}sassy-b.png`;
-const shy = `${imgAngry}shy-b.png`;
-const stoic = `${imgAngry}stoic-b.png`;
-const klever = `${imgAngry}klever-b.png`;
-const lavish = `${imgAngry}lavish-b.png`;
-const miner = `${imgAngry}miner-b.png`;
-const glitched = `${imgAngry}glitched-b.png`;
-const beta = `${imgAngry}beta-b.png`;
+const imgPath = "./assets/images/";
 
-const cje = `${imgAngry}cje.jpg`;
-const css = `${imgAngry}css.jpg`;
-const cts = `${imgAngry}cts.jpg`;
-const cmv = `${imgAngry}cmv.jpg`;
-const uec = `${imgAngry}uec.jpg`;
-const rrs = `${imgAngry}rrs.jpg`;
-const rct = `${imgAngry}rct.jpg`;
-const rhm = `${imgAngry}rhm.jpg`;
-const rsb = `${imgAngry}rsb.jpg`;
+// const imgErrorPlaceholder = `${imgPath}pending-preview.png`;
+
+const angry = `${imgPath}angry-b.png`;
+const curious = `${imgPath}curious-b.png`;
+const feisty = `${imgPath}feisty-b.png`;
+const nerdy = `${imgPath}nerdy-b.png`;
+const polite = `${imgPath}polite-b.png`;
+const reckless = `${imgPath}reckless-b.png`;
+const resilient = `${imgPath}resilient-b.png`;
+const sassy = `${imgPath}sassy-b.png`;
+const shy = `${imgPath}shy-b.png`;
+const stoic = `${imgPath}stoic-b.png`;
+const klever = `${imgPath}klever-b.png`;
+const lavish = `${imgPath}lavish-b.png`;
+const miner = `${imgPath}miner-b.png`;
+const glitched = `${imgPath}glitched-b.png`;
+const beta = `${imgPath}beta-b.png`;
+
+const cje = `${imgPath}cje.jpg`;
+const css = `${imgPath}css.jpg`;
+const cts = `${imgPath}cts.jpg`;
+const cmv = `${imgPath}cmv.jpg`;
+const uec = `${imgPath}uec.jpg`;
+const rrs = `${imgPath}rrs.jpg`;
+const rct = `${imgPath}rct.jpg`;
+const rhm = `${imgPath}rhm.jpg`;
+const rsb = `${imgPath}rsb.jpg`;
 export const nurseryPersonality = [
   {
     personality: "angry",
