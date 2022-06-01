@@ -8,7 +8,7 @@ import {handleImgIndexPath,
   handleAncestry, 
   handlePersonality
 } from "./helpers";
-import {imgPath} from "./constant";
+import {nurseryPersonality, imgPath} from "./constant";
 
 class DevikidInfo {
   constructor(element) {
@@ -36,6 +36,7 @@ class DevikidInfo {
   handleClickDeviInfo() {
     const deviChildID = this.handleGetChildID();
     this.handleAPI(deviChildID)
+    
   }
 
   handleAPI(deviChildID) {
@@ -59,7 +60,21 @@ class DevikidInfo {
           }
         }
         
-
+        function recoItems() {
+          const x = handlePersonality(result.Personality);
+          nurseryPersonality.forEach(element => {
+            if(element.personality === x.toLowerCase()) {
+             element.items.forEach(element2 => {
+               console.log(element2);
+               const appendItems = `
+                 <img src="${element2}" alt="nursy items" />
+               `;
+               $(".personality-reco-items").append(appendItems);
+             });
+           }
+         });
+        }
+        
         $(parentContainer).empty()
         const devikid = `<div class='' devi-id='${deviChildID}' id='child' devi-rarity=''>
           <div class='card-m' style='background-image: url(${dvkImg});'>
@@ -104,6 +119,9 @@ class DevikidInfo {
             <div class='devikid-data-box personality'>
               <p>Personality</p>
               <p>${handlePersonality(result.Personality)}</p>
+              <div class='personality-reco-items'>
+                <p>Recommended Items</p>
+              </div>
             </div>
             <div class='devikid-data-bar'>
               <div class='devikid-bar-info'>
@@ -185,8 +203,8 @@ class DevikidInfo {
 
         $(deviOA).text(result.OverallAffinity);
 
-        
-        
+        recoItems()
+
   
       },
       error: function () {

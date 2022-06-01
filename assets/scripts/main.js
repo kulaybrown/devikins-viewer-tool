@@ -56,4 +56,8 @@ async function get_dvk_price()
     }
     xhr.send(JSON.stringify({"names": "DVK/TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"}));
 }
+
 get_dvk_price();
+setInterval(() => {
+  get_dvk_price();
+}, 30000);

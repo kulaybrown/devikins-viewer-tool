@@ -80,4 +80,52 @@
       // box-shadow: 0 0 10px 0 $eldritch;
     }
   }
+
+  .personality {
+    position: relative;
+  }
+
+  .personality-reco-items {
+    border-radius: 5px;
+    position: absolute;
+    border: 1px solid #aa33b5;
+    background: #1d1a2f;
+    display: flex;
+    width: 160px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    top: -140px;
+    right: -120px;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 1px;
+      background-color: #aa33b5;
+      height: 26px;
+      bottom: -23px;
+      left: 30px;
+      transform: rotate(45deg);
+    }
+
+    p {
+      font-weight: 300;
+      color: rgba($uncommon, .7);
+      margin-bottom: 1px;
+      font-size: 12px;
+      text-transform: capitalize;
+      margin-top: 5px;
+    }
+
+    img {
+      width: 50px;
+      display: block;
+    }
+  }
 }
