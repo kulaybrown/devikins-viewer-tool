@@ -1,0 +1,368 @@
+.compare-info {
+  margin-bottom: 40px;
+
+  #addtocompare {
+    background: $eldritch;
+    width: 100%;
+    font-size: 20px;
+    padding: 5px 10px;
+    border: 0;
+    color: #fff;
+    max-width: 350px;
+  }
+
+  .compare-info-container {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .compare-item {
+    max-width: 200px;
+    width: 100%;
+    margin: 1px;
+  }
+
+  [devi-id] {
+    margin: auto;
+    margin-bottom: 15px;
+  }
+
+  .compare-action {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .compare-action-enter {
+      width: 100%;
+      font-size: 15px;
+      padding: 5px;
+      color: white;
+      background-color: $eldritch;
+      border: 1px solid $eldritch;
+    }
+
+    .compare-action-close {
+      width: 100%;
+      font-size: 15px;
+      padding: 5px;
+      color: white;
+      background-color: rgba($mythic, .1);
+      border: 0px;
+    }
+
+    input {
+      width: 100%;
+      border: 0px;
+      font-size: 18px;
+      padding: 5px 10px;
+      background: rgba(0, 0, 0, .4);
+      border: 1px solid rgba(0, 0, 0, .4);
+      color: white;
+      text-align: center;
+    }
+  }
+
+  .gene-cont {
+    position: relative;
+    left: 0;
+
+    .gene {
+      position: relative;
+
+      >div {
+        width: 200px;
+        position: absolute;
+        top: -2px;
+        left: -3px;
+        color: #fff;
+        text-transform: capitalize;
+        font-size: 16px;
+        font-weight: 300;
+        padding-left: 35px;
+        display: flex;
+        align-items: center;
+        z-index: -1;
+        height: 31px;
+        background-color: rgba($common, .2);
+      }
+    }
+
+    [data-gene="dominant"] {
+
+      >div {
+        background-color: rgba($common, .2);
+      }
+    }
+
+    [data-gene="co-dominant"] {
+
+      >div {
+        background-color: rgba($mythic, .2);
+      }
+    }
+
+    [data-gene="recessive"] {
+
+      >div {
+        background-color: rgba($rare, .2);
+      }
+    }
+
+
+    [data-gene='mutated'] {
+      >div {
+        background-color: rgba($eldritch, .2);
+      }
+    }
+
+    [data-gene='unique'] {
+      >div {
+        background-color: rgba($unique, .2);
+      }
+    }
+
+    [data-gene='bonded'] {
+      >div {
+        background-color: rgba($bonded, .2);
+      }
+    }
+  }
+
+  .aff-cont {
+    position: relative;
+    left: 0;
+
+    >div {
+      span {
+        width: 200px;
+        position: absolute;
+        top: -2px;
+        left: -3px;
+        color: #fff;
+        text-transform: capitalize;
+        font-size: 16px;
+        font-weight: 300;
+        padding-left: 35px;
+        display: flex;
+        align-items: center;
+        z-index: -1;
+        height: 31px;
+      }
+    }
+
+    [data-aff=common]>span {
+      background-color: rgba($common, .2);
+    }
+
+    [data-aff=uncommon]>span {
+      background-color: rgba($uncommon, .2);
+    }
+
+    [data-aff=rare]>span {
+      background-color: rgba($rare, .2);
+    }
+
+    [data-aff=mythic]>span {
+      background-color: rgba($mythic, .2);
+    }
+
+    [data-aff=eldritch]>span {
+      background-color: rgba($eldritch, .2);
+    }
+  }
+
+  .attributes {
+    width: 200px;
+    top: -2px;
+    left: -3px;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 14px;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    z-index: -1;
+    height: 30px;
+    background: black;
+    margin-bottom: 3px;
+    border: 1px solid $eldritch;
+    background-color: #1d1a2f;
+    font-weight: 300;
+    color: rgba($uncommon, .7);
+    margin-bottom: 2px;
+    font-size: 12px;
+    text-transform: capitalize;
+
+    >span {
+      color: white;
+      font-size: 16px;
+      margin-left: 5px;
+
+    }
+  }
+
+  .aff-cont-attr {
+
+    >div {
+      border-color: $eldritch;
+      border-radius: 0px;
+      background-color: $eldritch;
+      position: relative;
+
+      span {
+        border: 1px solid $eldritch;
+        background-color: #1d1a2f;
+
+        >div {
+
+          position: absolute;
+          height: 29px;
+          width: 100%;
+          background: rgba($eldritch, .2);
+          left: 0px;
+          top: 0;
+          z-index: -1;
+
+        }
+
+      }
+
+
+    }
+  }
+
+  .compare-attributes--false {
+
+    [devi-id] {
+      background: black;
+      box-shadow: none;
+    }
+
+    .devi-oa {
+      color: white;
+    }
+
+    .attributes {
+
+      color: #fff;
+
+      background: black;
+      border: 1px solid transparent;
+      background-color: #1d1a2f;
+      color: rgba($uncommon, .7);
+
+
+      >span {
+        color: white;
+        font-size: 16px;
+        margin-left: 5px;
+
+      }
+    }
+
+    .aff-cont-attr {
+
+      >div {
+        border-color: #1d1a2f;
+        background-color: #1d1a2f;
+
+        span {
+          border: 1px solid #1d1a2f;
+          background-color: #1d1a2f;
+
+          >div {
+
+
+            background: #1d1a2f;
+
+          }
+        }
+      }
+    }
+
+
+    .gene-cont {
+
+      [data-gene="dominant"] {
+        border-color: #1d1a2f;
+
+        >div {
+          background-color: #1d1a2f;
+        }
+      }
+
+      [data-gene="co-dominant"] {
+        border-color: #1d1a2f;
+
+        >div {
+          background-color: #1d1a2f;
+        }
+      }
+
+      [data-gene="recessive"] {
+        border-color: #1d1a2f;
+
+        >div {
+          background-color: #1d1a2f;
+        }
+      }
+
+
+      [data-gene='mutated'] {
+        border-color: #1d1a2f;
+
+        >div {
+          background-color: #1d1a2f;
+        }
+      }
+
+      [data-gene='unique'] {
+        border-color: #1d1a2f;
+
+        >div {
+          background-color: #1d1a2f;
+        }
+      }
+
+      [data-gene='bonded'] {
+        border-color: #1d1a2f;
+
+        >div {
+          background-color: #1d1a2f;
+        }
+      }
+    }
+
+    .aff-cont {
+      [data-aff] {
+        border-color: #1d1a2f;
+      }
+
+      [data-aff=common]>span {
+        background-color: #1d1a2f;
+      }
+
+      [data-aff=uncommon]>span {
+        background-color: #1d1a2f;
+      }
+
+      [data-aff=rare]>span {
+        background-color: #1d1a2f;
+      }
+
+      [data-aff=mythic]>span {
+        background-color: #1d1a2f;
+      }
+
+      [data-aff=eldritch]>span {
+        background-color: #1d1a2f;
+      }
+    }
+
+  }
+}

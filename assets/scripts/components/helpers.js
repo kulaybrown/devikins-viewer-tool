@@ -155,6 +155,8 @@ export function handlePersonality(personality) {
     x = "Miner";
   } else if(personality === 14) {
     x = "Glitched";
-  }
+  } else if(personality === 15) {
+    x = "Beta";
+  } 
   return x;
 }
