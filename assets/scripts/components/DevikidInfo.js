@@ -56,7 +56,7 @@ class DevikidInfo {
           tester.onerror=imageNotFound;
           tester.src=dvkImg;
           function imageNotFound() {
-            $('.card-m').css({"background": `url(${imgPath}pending-preview.png) no-repeat center center`, "background-size": "140%"});
+            $('.devikid-info .card-m').css({"background": `url(${imgPath}pending-preview.png) no-repeat center center`, "background-size": "140%"});
           }
         }
         
