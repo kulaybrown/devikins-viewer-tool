@@ -75,13 +75,13 @@ setInterval(() => {
 async function get_dvk_price2(dvk_price)
 {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://free.currconv.com/api/v7/convert?q=USD_PHP&compact=ultra&apiKey=e7c7c75054711168b564", true);
+    xhr.open("GET", "https://api.coingecko.com/api/v3/simple/price?ids=usd&vs_currencies=php", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onreadystatechange = async function(){
-      // console.log(JSON.parse(this.response).USD_PHP)
+      // console.log(JSON.parse(this.response).usd.php)
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             let value = JSON.parse(this.response);
-            php_price = value.USD_PHP * dvk_price;
+            php_price = value.usd.php * dvk_price;
             document.querySelector("#dvk-price .php-price").innerHTML = "₱"+ php_price.toFixed(6);
             // document.querySelector("#dvk-price > div").innerHTML = "$"+ value.symbols[0].price.toFixed(6);
 			
