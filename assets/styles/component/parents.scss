@@ -17,4 +17,40 @@
       margin-bottom: 10px;
     }
   }
+
+  @media (max-width: 700px) {
+    #family-tree {
+      .generation {
+        flex-direction: row;
+
+        &:before,
+        &:after {
+          content: none;
+        }
+      }
+
+      #grand-parents {
+        margin-top: -60px;
+        margin-bottom: -60px;
+
+        .pair {
+          transform: scale(.6);
+        }
+      }
+
+      #parents {
+        .parent-item {
+          transform: scale(.6);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+
+    #family-tree #grand-parents,
+    #family-tree #parents .pair {
+      flex-direction: row;
+    }
+  }
 }
