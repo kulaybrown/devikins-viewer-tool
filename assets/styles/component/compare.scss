@@ -17,6 +17,11 @@
     width: 100%;
     justify-content: center;
     margin-top: 40px;
+    overflow: auto;
+
+    @media (max-width: 860px) {
+      justify-content: initial;
+    }
   }
 
   .compare-item {
