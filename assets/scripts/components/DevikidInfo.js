@@ -65,7 +65,7 @@ class DevikidInfo {
           nurseryPersonality.forEach(element => {
             if(element.personality === x.toLowerCase()) {
              element.items.forEach(element2 => {
-               console.log(element2);
+              //  console.log(element2);
                const appendItems = `
                  <img src="${element2}" alt="nursy items" />
                `;

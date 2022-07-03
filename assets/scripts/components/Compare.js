@@ -137,7 +137,7 @@ class Compare {
       $(".compare-action-enter").on("click", function() {
         const inputVal = $(this).siblings("input").val()
         const select = $(this).parents(".compare-item").find(".compare-attributes")
-          console.log(select);
+          // console.log(select);
           $.ajax({
             url: `https://inventory.api.devikins.com/asset/${inputVal}`,
             type: "GET",
@@ -145,7 +145,7 @@ class Compare {
             data: {
             },
             success: function (result) {
-              console.log(result)
+              // console.log(result)
               let dvkImg = `https://img.devikins.com/${handleImgIndexPath(inputVal)}/${inputVal}.png`;
 
               function errorImage() {

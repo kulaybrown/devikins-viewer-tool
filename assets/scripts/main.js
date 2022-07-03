@@ -18,18 +18,24 @@ $(".compare-info").each((index, element) => new Compare(element));
 // console.log($(".selection").length)
 
 
-
-$(".send-love img").on("click", function(){
-  copyToClipboard();
+const d1 = $("#forbeer1");
+const d2 = $("#forbeer2");
+$(d1).find('img').on("click", function(){
+  copyToClipboard(this.parentNode.childNodes[1]);
 })
-$("#forbeer").on("click", function(){
-  copyToClipboard();
+$(d2).find('img').on("click", function(){
+  copyToClipboard(this.parentNode.childNodes[1]);
 })
-function copyToClipboard() {
+$(d1).find('input').on("click", function(){
+  copyToClipboard(this);
+})
+$(d2).find('input').on("click", function(){
+  copyToClipboard(this);
+})
+function copyToClipboard(x) {
   /* Get the text field */
-  var copyText = document.getElementById("forbeer");
-
-  // /* Select the text field */
+  var copyText = x;
+  /* Select the text field */
   copyText.value;
   copyText.setSelectionRange(0, 99999); /* For mobile devices */
 
