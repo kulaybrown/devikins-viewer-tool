@@ -21,10 +21,10 @@ $(".compare-info").each((index, element) => new Compare(element));
 const d1 = $("#forbeer1");
 const d2 = $("#forbeer2");
 $(d1).find('img').on("click", function(){
-  copyToClipboard(this.parentNode.childNodes[1]);
+  copyToClipboard(this.parentNode.childNodes[3]);
 })
 $(d2).find('img').on("click", function(){
-  copyToClipboard(this.parentNode.childNodes[1]);
+  copyToClipboard(this.parentNode.childNodes[3]);
 })
 $(d1).find('input').on("click", function(){
   copyToClipboard(this);
