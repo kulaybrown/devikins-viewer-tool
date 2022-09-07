@@ -63,7 +63,7 @@ export const nurseryPersonality = [
   {
     personality: "reckless",
     img: reckless,
-    items: [uxr,rbc,rsb,csb,uec],
+    items: [uxr,rbc,rsb,csb,rhm],
   },
   {
     personality: "resilient",
