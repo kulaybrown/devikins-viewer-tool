@@ -49,33 +49,30 @@ function copyToClipboard(x) {
 // DVK Price
 let dvk_price = 0; 
 let php_price = 0; 
-async function get_dvk_price()
-{
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://prices.endpoints.services.klever.io/v1/prices", true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.onreadystatechange = async function(){
-      // console.log(this)
-      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-          let value = JSON.parse(this.response)
-          dvk_price = value.symbols[0].price
-          
 
-          document.querySelector("#dvk-price .usd-price").innerHTML = "$"+ dvk_price.toFixed(6);
-          get_dvk_price2(dvk_price)
-      } else {
-          document.querySelector("#dvk-price .usd-price").innerHTML = "$-";
-      }
+async function get_dvk_price() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     console.log(this.responseText)
     }
-    xhr.send(JSON.stringify({"names": "DVK/USDT"}));
+    if (this.readyState == 4 && this.status == 200) {
+      let value = JSON.parse(this.responseText)
+      dvk_price = value.price;
+      document.querySelector("#dvk-price .usd-price").innerHTML = "$"+ value.price;
+      get_dvk_price2(dvk_price)
+    } else {
+        document.querySelector("#dvk-price .usd-price").innerHTML = "$-";
+    }
+  };
+  xhttp.open("GET", "https://api.exchange.klever.io/v1/market/ticker?symbol=dvk-USDT", true);
+  xhttp.send();
 }
 
 get_dvk_price();
 setInterval(() => {
   get_dvk_price();
 }, 30000);
-
-// console.log(process.env);
 
 
 async function get_dvk_price2(dvk_price)
@@ -84,13 +81,10 @@ async function get_dvk_price2(dvk_price)
     xhr.open("GET", "https://api.coingecko.com/api/v3/simple/price?ids=usd&vs_currencies=php", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onreadystatechange = async function(){
-      // console.log(JSON.parse(this.response).usd.php)
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             let value = JSON.parse(this.response);
             php_price = value.usd.php * dvk_price;
             document.querySelector("#dvk-price .php-price").innerHTML = "₱"+ php_price.toFixed(6);
-            // document.querySelector("#dvk-price > div").innerHTML = "$"+ value.symbols[0].price.toFixed(6);
-			
         }
     }
     xhr.send();
